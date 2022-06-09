@@ -15,6 +15,7 @@ class Cevaplar {
     public static String pattern = "<<code>>";
 
     public static String searchPattern (String[] arr, String pattern){
+        // arr String array'i içerisinde gezin ve pattern'i içeren elemanı return et
         for (String s : arr){
             if (s.contains(pattern)){ return s; }
         }
@@ -26,26 +27,30 @@ class Cevaplar {
         String input;
         String[] arr;
         int arrSize = 0;
+
+        // Kullanıcıdan 5'den büyük bir dizi boyutu al
         try{
             do {
                 System.out.print("Dizi boyutunu girin (minimum 5): ");
                 arrSize = sc.nextInt();
             } while (arrSize < 5);
-        
-            sc.nextLine();
-            arr = new String[arrSize];
-        
-            for (int i = 0; i < arrSize; i++){
-                System.out.printf("Dizinin %d. öğesi: ", i + 1);
-                input = sc.nextLine();            
-                arr[i] = input;
-            }
-            
-            System.out.println(searchPattern(arr, pattern));
 
         } catch (Exception e){
             System.err.println(e);
         }
+
+        sc.nextLine();
+        arr = new String[arrSize];
+        
+        // Diziyi kullanıcıdan alınan değerlerle doldur
+        for (int i = 0; i < arrSize; i++){
+            System.out.printf("Dizinin %d. öğesi: ", i + 1);
+            input = sc.nextLine();
+            arr[i] = input;
+        }
+
+        // arr içerisinde "<<code>> stringini ara
+        System.out.println(searchPattern(arr, pattern));
 
         sc.close();
     }
