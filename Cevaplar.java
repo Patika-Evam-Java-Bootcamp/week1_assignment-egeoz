@@ -20,7 +20,7 @@ class Cevaplar {
             if (s.contains(pattern)){ return s; }
         }
 
-        return "No match has been found.";
+        return "Eşleşme bulunamadı.";
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -41,7 +41,7 @@ class Cevaplar {
 
         sc.nextLine();
         arr = new String[arrSize];
-        
+
         // Diziyi kullanıcıdan alınan değerlerle doldur
         for (int i = 0; i < arrSize; i++){
             System.out.printf("Dizinin %d. öğesi: ", i + 1);
@@ -54,5 +54,4 @@ class Cevaplar {
 
         sc.close();
     }
-
 }
